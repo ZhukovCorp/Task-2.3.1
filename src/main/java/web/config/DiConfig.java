@@ -27,8 +27,12 @@ import java.util.Properties;
 @EnableWebMvc
 public class DiConfig {
 
+    private final Environment environment;
+
     @Autowired
-    private Environment environment;
+    public DiConfig(Environment environment) {
+        this.environment = environment;
+    }
 
     @Bean
     public DataSource dataSource() {
